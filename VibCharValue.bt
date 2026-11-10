@@ -1,0 +1,25 @@
+ struct VibCharValue {
+    float fCharAll;    //通频特征值
+    float fCharHalf;   //1/2分频特征值
+    float fCharOne;    //1倍频特征值
+    float fCharTwo;    //2倍频特征值
+    float fCharThree;  //3倍频特征值
+    float fCharRes;    //残振特征值
+    float fDC;         //直流量
+    float fGap;        //间隙值
+    float fPhaseHalf;  //1/2分频相位
+    float fPhaseOne;   //1倍频相位
+    float fPhaseTwo;   //2倍频相位
+    float fPhaseThree; //3倍频相位
+    int   iSmpFreq;    //采样频率
+    int   iSmpNum;     //采样点数
+    int   iRev;        //转速
+ };
+
+struct File{
+    while(!FEof()) {
+        VibCharValue value;
+    }
+};
+ 
+File file <open=true>;
