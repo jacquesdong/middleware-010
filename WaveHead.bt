@@ -1,0 +1,1 @@
+struct CWaveHead{	int    m_nMagicValue;	int    m_nDataLen;	float  m_pParam[m_nDataLen];};while(!FEof()) {    CWaveHead head <open=true>;}
