@@ -1,4 +1,4 @@
- struct VibCharValue {
+ typedef struct {
     float fCharAll;    //通频特征值
     float fCharHalf;   //1/2分频特征值
     float fCharOne;    //1倍频特征值
@@ -14,7 +14,30 @@
     int   iSmpFreq;    //采样频率
     int   iSmpNum;     //采样点数
     int   iRev;        //转速
- };
+ } VibCharValue <read=VibCharValue_read>;
+
+ void AppendField(string &str, string item){
+     if (Strlen(str) > 0) {
+         Strcat(str, " ");
+     }
+     Strcat(str, item);
+ }
+
+ void AppendFloat(string &str, string name, float v){
+     if (v != 0) AppendField(str, Str("%s=%.2f", name, v));
+ }
+
+ void AppendInt(string &str, string name, int v){
+     if (v != 0) AppendField(str, Str("%s=%d", name, v));
+ }
+
+ string VibCharValue_read(VibCharValue& self){
+     string str;
+     AppendFloat(str, "fCharAll", self.fCharAll);
+     AppendInt(str, "iSmpNum", self.iSmpNum);
+     AppendInt(str, "iRev", self.iRev);
+     return str;
+ }
 
 struct File{
     while(!FEof()) {
